@@ -1,0 +1,152 @@
+.nav-info {
+    float:inline-start ;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+}
+
+
+#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(13, 13, 87);
+    border-radius: 5px;
+    padding: 3%;
+    color: beige;
+    width: fit-content;
+}
+
+.btn-login {
+    margin-top: 10%;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: azure;
+}
+
+#utilizador {
+    width: 100%;
+}
+
+#btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+/* navbar.css */
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #08213a !important;
+    /* Azul escuro */
+}
+
+/* Estilo para os links na barra de navegação */
+.navbar .nav-link {
+    color: #ffffff !important;
+    /* Letras brancas */
+}
+
+/* Estilo para o link ativo na barra de navegação */
+.navbar .nav-link.active {
+    color: #cccccc !important;
+    /* Letras brancas com um tom diferente para o ativo */
+}
+
+/* Estilo para a marca da barra de navegação */
+.navbar .navbar-brand {
+    color: #ffffff !important;
+    /* Letras brancas */
+}
+
+/* Estilo para o ícone do botão de alternância */
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Remove a borda do botão de alternância */
+.navbar .navbar-toggler {
+    border: none !important;
+}
+
+/* navbar.css ou style.css */
+
+.info-nav {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    flex-wrap: wrap;
+    /* Ajuste conforme necessário */
+}
+
+#legislacao {
+    border: 2px solid #ddd;
+    /* Cor e espessura da borda */
+    border-radius: 10px;
+    /* Bordas arredondadas moderadas */
+    padding: 10px 20px;
+    /* Espaçamento interno para conforto visual */
+    display: inline-block;
+    /* Garante que a largura se ajuste ao conteúdo */
+    background-color: #f9f9f9;
+    /* Cor de fundo leve */
+    text-align: center;
+    /* Centraliza o texto internamente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma leve sombra para destacar */
+    font-family: Arial, sans-serif;
+    /* Fonte padrão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+}
+
+h2 {
+    text-align: center;
+    /* Centraliza o título */
+}
+
+table {
+    margin: 0 auto;
+    /* Centraliza a tabela */
+    width: 80%;
+    /* Largura da tabela */
+    border-collapse: collapse;
+}
+
+/* Estilo para cabeçalho da tabela */
+th {
+
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilo para células da tabela */
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+/* Estilo para linhas alternadas */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.info-item {
+    float: left;
+    border-radius: 5px;
+    background-color: rgb(13, 13, 87, 0.3);
+    padding: 5px;
+    margin: auto;
+    min-width: 500px ;
+}

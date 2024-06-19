@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakito</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <style>
+        /* Estilo para a div info-nav */
+        .info-nav {
+            flex-direction: column;
+            /* Coluna ao invés de linha */
+            align-items: center;
+            /* Centraliza na direção principal */
+            text-align: center;
+            /* Centraliza o conteúdo */
+            margin-top: 20px;
+            /* Espaçamento superior */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Wakito</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./home.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./facturas.html">Facturas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./funcionarios.html">Funcionarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./legislacao.html">Legislação</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="info-nav">
+
+        <h2>Tabela de Produtos</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="search" value="" placeholder="Digite o id do produto"></th>
+                    <th><button class="bnt">Pesquisar produto</button></th>
+                    <th><button class="bnt">Adicionar produto</button></th>
+                    <th><button class="bnt">Alterar produto</button></th>
+                    <th><button class="bnt">Remover produto</button></th>
+                    <th></th>
+                <tr>
+                    <th>ID Produto</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Preço Unitário</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody id="lista_produtos">
+                <!-- Aqui serão adicionadas as linhas de produtos -->
+            </tbody>
+        </table>
+    </div>
+
+    <pre>
+
+
+    </pre>
+
+    <script src="../../public/js/bootstrap.js"></script>
+    <!-- <script src="../../public/js/script.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetchProdutos();
+        });
+
+        async function fetchProdutos() {
+            try {
+                const response = await fetch('/api/produtos');
+                const produtos = await response.json();
+
+                const listaProdutos = document.getElementById('lista_produtos');
+                listaProdutos.innerHTML = ''; // Limpa qualquer dado existente
+
+                produtos.forEach(produto => {
+                    const row = document.createElement('tr');
+
+                    const idCell = document.createElement('td');
+                    idCell.textContent = produto.id_produto;
+                    row.appendChild(idCell);
+
+                    const nomeCell = document.createElement('td');
+                    nomeCell.textContent = produto.nome;
+                    row.appendChild(nomeCell);
+
+                    const descricaoCell = document.createElement('td');
+                    descricaoCell.textContent = produto.descricao;
+                    row.appendChild(descricaoCell);
+
+                    const categoriaCell = document.createElement('td');
+                    categoriaCell.textContent = produto.categoria;
+                    row.appendChild(categoriaCell);
+
+                    const precoCell = document.createElement('td');
+                    precoCell.textContent = produto.preco_unit.toFixed(2);
+                    row.appendChild(precoCell);
+
+                    const estoqueCell = document.createElement('td');
+                    estoqueCell.textContent = produto.estoque;
+                    row.appendChild(estoqueCell);
+
+                    listaProdutos.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Erro ao buscar produtos:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>
